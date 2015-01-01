@@ -3,6 +3,12 @@
  *
  */
 
+
+_.each( _.keys(MIDI.Soundfont), function(instrument) {
+  MIDI.loadPlugin({ instrument: instrument });
+  Vex.Flow.Player.INSTRUMENTS_LOADED[instrument] = true;
+});
+
 function L() { console.log("NGVex: ", arguments); }
 
 function NGTabDiv(sel, options) {

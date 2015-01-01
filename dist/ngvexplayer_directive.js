@@ -14,6 +14,10 @@ angular.module('VexAngular', [])
         for (var idx in instruments) {
             var inst = instruments[idx];
 
+            if (_.has(MIDI.Soundfont, inst)) {
+              continue;
+            }
+
             function __make_cb() {
                 var __inst = inst;
                 function __cb() {
