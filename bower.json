@@ -1,0 +1,42 @@
+{
+  "name": "ngvexplayer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/CrearAyT/NGVexPlayer",
+  "authors": [
+    "Adrián Pardini <adrian@elarteylatecnologia.com.ar>"
+  ],
+  "description": "Angular directives around VexTabDiv and Player",
+  "main": [
+    "dist/midijs/base64binary.js",
+    "dist/midijs/Base64.js",
+    "dist/midijs/MIDI.js",
+    "soundfont/acoustic_grand_piano-ogg.js",
+    "dist/vexplayer/vextab-div.js",
+    "dist/vexplayer/player.js",
+    "dist/ngvex.js",
+    "dist/ngvexplayer_directive.js"
+  ],
+  "keywords": [
+    "angularjs",
+    "midi",
+    "music",
+    "tablature",
+    "vex"
+  ],
+  "license": "GPL2",
+  "private": true,
+  "dependencies": {
+    "underscore": "~1.7.0",
+    "jquery": "~1.11",
+    "ionic": "~v1.0.0-beta.8",
+    "paper": "~0.9.21"
+  },
+  "ignore": [
+    "demo_app",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
