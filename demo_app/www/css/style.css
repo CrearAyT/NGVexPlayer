@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Journal';
+  src: url('journal.eot');
+  src: url('journal.eot?#iefix') format('embedded-opentype'),
+       url('journal.woff') format('woff'),
+       url('journal.ttf') format('truetype'),
+       url('journal.svg#JournalRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Empty. Add your own CSS if you like */
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin:20px 0;
+}
+
+.jumbotron{
+    background: white;
+}
+.text-lg{
+    font-size: 1.5em;
+}
+.text-med{
+    font-size: 1.2em;
+}
+.text-xlg{
+    font-size: 2.4em;
+}
+.border-around {
+    background: rgba(255,255,255,0.7);
+}
+.text-red{
+    color:#E52A3A;
+}
+.text-gray{
+    color:#5f5f5f;
+}
+.roboto{
+    font-family: "Roboto", sans-serif;
+}
+text-sm{
+    font-size: 0.5em;
+}
+.border-around{
+    border:1px solid rgba(2,2,2,0.1);
+    border-radius: 6px;
+    vertical-align: text-bottom;
+}
+.light{
+    padding: 1em;
+}
+.lighter{
+    padding: 0.5em;
+}
+.shadWhite{
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+.shadBlack{
+    text-shadow: 0 1px 0 rgba(2,2,2,0.7);
+}
+a.text-gray:hover{
+    color:#5f5f5f;
+}
