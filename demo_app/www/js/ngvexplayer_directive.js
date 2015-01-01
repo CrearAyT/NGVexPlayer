@@ -1,0 +1,1 @@
+../../../dist/ngvexplayer_directive.js

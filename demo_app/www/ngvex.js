@@ -1,0 +1,1 @@
+../../dist/ngvex.js
