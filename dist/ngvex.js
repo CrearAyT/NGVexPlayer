@@ -141,6 +141,7 @@ NGPlayer.prototype.playNote = function(notes) {
     y = note.getStave().getYForLine(2);
     if (this.paper != null) {
       this.updateMarker(x, y);
+      this.onUpdateMarker(this.scale*x, this.scale*y);
     }
     if (note.isRest()) {
       continue;
@@ -173,6 +174,10 @@ NGPlayer.prototype.playNote = function(notes) {
 };
 
 NGPlayer.prototype.onNoteOn = function (notes) {
+  // stub.
+}
+
+NGPlayer.prototype.onUpdateMarker = function (x,y) {
   // stub.
 }
 

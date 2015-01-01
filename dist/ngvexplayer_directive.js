@@ -45,10 +45,12 @@ angular.module('VexAngular', [])
         height: '=',
         preload: '=preloadSoundfonts',
         onNoteOn: '&?',
+        onUpdateMarker: '&?',
       },
       link: function (scope, element, attrs, controller) {
 
         var td = new NGTabDiv(element, scope);
+        var markerCb = undefined;
 
         td.code = scope.model;
         td.redraw();
@@ -56,6 +58,7 @@ angular.module('VexAngular', [])
         if (scope.player != undefined) {
             scope.player.tabdiv = td;
             scope.player.player = td.player;
+            scope.player.marker = {x:0, y:0};
         }
 
         if (scope.preload) {
@@ -74,6 +77,23 @@ angular.module('VexAngular', [])
             td.player.onNoteOn = newValue();
           } else {
             td.player.onNoteOn = function(){};
+          }
+        });
+
+        td.player.onUpdateMarker = function(x,y) {
+          if (markerCb) {
+            markerCb(x,y);
+          }
+          if (scope.player) {
+            scope.player.marker = {x:x, y:y};
+            scope.$apply();
+          }
+        };
+        scope.$watch('onUpdateMarker', function(newValue, oldValue) {
+          if (_.isFunction(newValue)) {
+            markerCb = newValue();
+          } else {
+            markerCb = undefined;
           }
         });
 
