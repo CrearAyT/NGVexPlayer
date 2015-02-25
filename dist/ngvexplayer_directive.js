@@ -80,9 +80,9 @@ angular.module('VexAngular', [])
           }
         });
 
-        td.player.onUpdateMarker = function(x,y) {
+        td.player.onUpdateMarker = function(x,y,note) {
           if (markerCb) {
-            markerCb(x,y);
+            markerCb(x,y,note);
           }
           if (scope.player) {
             scope.player.marker = {x:x, y:y};
