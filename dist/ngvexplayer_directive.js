@@ -52,8 +52,7 @@ angular.module('VexAngular', [])
         var td = new NGTabDiv(element, scope);
         var markerCb = undefined;
 
-        td.code = scope.model;
-        td.redraw();
+        td.setCode(scope.model);
 
         if (scope.player != undefined) {
             scope.player.tabdiv = td;
@@ -67,8 +66,7 @@ angular.module('VexAngular', [])
 
         scope.$watch('model', function(newValue, oldValue) {
           if (typeof newValue !== 'undefined') {
-            td.code = newValue;
-            td.redraw();
+            td.setCode(newValue);
           }
         });
 
