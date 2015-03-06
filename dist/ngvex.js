@@ -58,6 +58,13 @@ NGTabDiv.prototype.init = function(sel, options) {
   this.redraw();
 }
 
+NGTabDiv.prototype.setCode = function(code) {
+  this.code = code;
+  this.redraw();
+  if (this.player) {
+    this.player.resetOverlay();
+  }
+}
 
 function NGPlayer(artist, options) {
   Vex.Flow.Player.apply(this, arguments);
@@ -172,6 +179,17 @@ NGPlayer.prototype.playNote = function(notes) {
   }
   return _results;
 };
+
+NGPlayer.prototype.resetOverlay = function() {
+  if (this.paper) {
+    var view = this.paper.getView();
+    if(view) {
+        view.element.remove();
+    }
+    this.paper.remove();
+    this.paper = null;
+  }
+}
 
 NGPlayer.prototype.onNoteOn = function (notes) {
   // stub.
